@@ -1,19 +1,11 @@
-// ...........stack memory , Heap Memory ..............
+const buttons = document.querySelectorAll('.button');
+const body = document.querySelector('body');
 
-let myName = 'Rehmat Ullah'
-let anothername = myName
-anothername = "Abdullah"
-
-console.log(myName)
-console.log(anothername)
-
-let userone = {
-    email:"rehmat.code@gmail.com",
-    id:"rehmat@123"
-}
-
-let usertwo = userone 
-
-usertwo.email = "user@google.com"
-console.log(userone.email)
-console.log(usertwo.email)
+buttons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        const color = e.target.id;  // Get the id of the clicked button
+        if (color) {
+            body.style.backgroundColor = color;  // Set the background color based on the button id
+        }
+    });
+});
